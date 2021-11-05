@@ -2,12 +2,6 @@ from psycopg2.extensions import connection as _connection
 
 
 class PostgresSaver:
-    """Класс для сохранения данных в бд
-    Принимает словарь из sqllite_loader.py со значениями из dataclasses
-    проходит циклом, каждые 100 записей добавляет в postgres. Пришлось сделать дублирование кода,
-    что бы добавлять последние записи.
-    В postgres добавляются данные из методов, соответствующих названиям таблиц
-    """
 
     def __init__(self, pg_conn: _connection):
         self.conn = pg_conn
