@@ -30,4 +30,3 @@ class PostgresSaver:
                         ON CONFLICT (id) DO NOTHING
                         """)
                     self.conn.commit()
-        return True

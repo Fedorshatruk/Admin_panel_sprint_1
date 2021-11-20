@@ -7,8 +7,10 @@ from psycopg2.extras import DictCursor
 from Admin_panel_sprint_1.sqlite_to_postgres.sqlite_loader import SQLiteLoader
 from Admin_panel_sprint_1.sqlite_to_postgres.postres_saver import PostgresSaver
 from conf import dsl
+from log_config import *
 
 
+@logger.catch
 def load_from_sqlite(connection: sqlite3.Connection, pg_conn: _connection):
     """Основной метод загрузки данных из SQLite в Postgres"""
     postgres_saver = PostgresSaver(pg_conn)
